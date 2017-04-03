@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": "error",
+    "eol-last": "error",
+    "space-in-parens": "error",
+    "brace-style": "error",
+    "no-trailing-spaces": "error",
+    "keyword-spacing": "error",
+    "indent": [2, 4]
+  }
+}
