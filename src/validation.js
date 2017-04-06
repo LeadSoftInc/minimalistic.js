@@ -1,7 +1,7 @@
 const defaultData = {
     value:    '',
     messages: {},
-    methods:  []
+    methods:  {}
 };
 
 export default function (_data) {
@@ -11,16 +11,20 @@ export default function (_data) {
     };
 
     // eslint-disable-next-line no-restricted-syntax
-    for (const method of params.methods) {
-        if (method(params.value)) {
-            if (params.messages[method.name]) {
-                // return error message
-                return params.messages[method.name];
+    for (const method in params.methods) {
+        if (Object.prototype.hasOwnProperty.call(params.methods, method)) {
+            const checkMethod = params.methods[method];
+
+            if (checkMethod(params.value)) {
+                if (params.messages[method]) {
+                    // return error message
+                    return params.messages[method];
+                }
+                window.console.warn(`Minimalistic.js: Not message for the "${ method }" method!`);
+                return method;
             }
-            // TODO: check NODE_ENV
-            window.console.warn(`Validation: Not message for the "${ method.name }" method!`);
-            return method.name;
         }
     }
+
     return false;
 }
