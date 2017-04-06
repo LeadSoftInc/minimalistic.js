@@ -24,3 +24,12 @@ export function isNumber(value) {
     const Reg = new RegExp(/^\d+$/);
     return !Reg.test(value);
 }
+
+/**
+ * @param value
+ * @returns {boolean}
+ */
+export function isTextAndSpace(value) {
+    const Reg = new RegExp(/^[a-zA-Z\s]*$/);
+    return !Reg.test(value);
+}
