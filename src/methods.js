@@ -24,3 +24,21 @@ export function isNumber(value) {
     const Reg = new RegExp(/^\d+$/);
     return !Reg.test(value);
 }
+
+/**
+ * @param value
+ * @returns {boolean}
+ */
+export function isTextAndSpace(value) {
+    const Reg = new RegExp(/^[a-zA-Z\s]*$/);
+    return !Reg.test(value);
+}
+
+/**
+ * @param maxSize
+ */
+export const maxFileSize = (maxSize) =>
+    // eslint-disable-next-line no-shadow
+    function maxFileSize(file) {
+        return (file.size >= maxSize);
+    };
