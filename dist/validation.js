@@ -10,35 +10,17 @@ exports.default = function (_data) {
     var params = _extends({}, defaultData, _data);
 
     // eslint-disable-next-line no-restricted-syntax
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    for (var method in params.methods) {
+        if (Object.prototype.hasOwnProperty.call(params.methods, method)) {
+            var checkMethod = params.methods[method];
 
-    try {
-        for (var _iterator = params.methods[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var method = _step.value;
-
-            if (method(params.value)) {
-                if (params.messages[method.name]) {
+            if (checkMethod(params.value)) {
+                if (params.messages[method]) {
                     // return error message
-                    return params.messages[method.name];
+                    return params.messages[method];
                 }
-                // TODO: check NODE_ENV
-                window.console.warn('Validation: Not message for the "' + method.name + '" method!');
-                return method.name;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
+                window.console.warn('Minimalistic.js: Not message for the "' + method + '" method!');
+                return method;
             }
         }
     }
@@ -49,6 +31,6 @@ exports.default = function (_data) {
 var defaultData = {
     value: '',
     messages: {},
-    methods: []
+    methods: {}
 };
 //# sourceMappingURL=validation.js.map

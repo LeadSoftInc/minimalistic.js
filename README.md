@@ -6,7 +6,9 @@ import { validation, methods } from 'minimalistic-js';
 
 const loginError = validation({
     value: 'admin', // input value
-    methods: [ methods.required ], // check methods
+    methods: { // check methods
+        required: methods.required
+    },
     messages: { // error messages
         required: 'The field is required'
     }
