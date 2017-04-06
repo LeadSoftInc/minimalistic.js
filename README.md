@@ -20,4 +20,4 @@ if (loginError) {
 ```
 
 ### Check methods
-https://github.com/kuzmenko1256/minimalistic.js/blob/master/src/methods.js
+https://github.com/LeadSoftInc/minimalistic.js/blob/master/src/methods.js
