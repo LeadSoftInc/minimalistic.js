@@ -1,5 +1,11 @@
 # minimalistic.js
 
+### Installation
+To install the stable version:
+```
+npm install --save minimalistic-js
+```
+
 ### Example validation
 #### Check string
 ```javascript
