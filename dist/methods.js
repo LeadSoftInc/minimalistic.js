@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.required = required;
 exports.isEmail = isEmail;
@@ -12,7 +12,7 @@ exports.isTextAndSpace = isTextAndSpace;
  * @returns {boolean}
  */
 function required(value) {
-    return value.length === 0;
+  return value.length === 0;
 }
 
 /**
@@ -20,9 +20,9 @@ function required(value) {
  * @returns {boolean}
  */
 function isEmail(value) {
-    // eslint-disable-next-line no-useless-escape
-    var Reg = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    return !Reg.test(value);
+  // eslint-disable-next-line no-useless-escape
+  var Reg = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  return !Reg.test(value);
 }
 
 /**
@@ -30,8 +30,8 @@ function isEmail(value) {
  * @returns {boolean}
  */
 function isNumber(value) {
-    var Reg = new RegExp(/^\d+$/);
-    return !Reg.test(value);
+  var Reg = new RegExp(/^\d+$/);
+  return !Reg.test(value);
 }
 
 /**
@@ -39,19 +39,16 @@ function isNumber(value) {
  * @returns {boolean}
  */
 function isTextAndSpace(value) {
-    var Reg = new RegExp(/^[a-zA-Z\s]*$/);
-    return !Reg.test(value);
+  var Reg = new RegExp(/^[a-zA-Z\s]*$/);
+  return !Reg.test(value);
 }
 
 /**
  * @param maxSize
  */
 var maxFileSize = exports.maxFileSize = function maxFileSize(maxSize) {
-    return (
-        // eslint-disable-next-line no-shadow
-        function maxFileSize(file) {
-            return file.size >= maxSize;
-        }
-    );
+  return function (file) {
+    return file.size >= maxSize;
+  };
 };
 //# sourceMappingURL=methods.js.map
