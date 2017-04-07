@@ -37,8 +37,4 @@ export function isTextAndSpace(value) {
 /**
  * @param maxSize
  */
-export const maxFileSize = (maxSize) =>
-    // eslint-disable-next-line no-shadow
-    function maxFileSize(file) {
-        return (file.size >= maxSize);
-    };
+export const maxFileSize = maxSize => file => file.size >= maxSize;
