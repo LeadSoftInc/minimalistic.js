@@ -43,10 +43,7 @@ if (fileError) {
 }
 ```
 
-### Check methods
-https://github.com/LeadSoftInc/minimalistic.js/blob/master/src/methods.js
-
-### Example ES5 Node.js
+#### Example ES5 Node.js
 ```javascript
 var minimalisticJs = require("minimalistic-js");
 
@@ -64,6 +61,9 @@ if (fieldError) {
     console.warn(fieldError);
 }
 ```
+
+### Check methods
+https://github.com/LeadSoftInc/minimalistic.js/blob/master/src/methods.js
 
 ### Create custom check method
 ```javascript
