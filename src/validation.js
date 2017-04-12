@@ -20,7 +20,8 @@ export default function (_data) {
                     // return error message
                     return params.messages[method];
                 }
-                window.console.warn(`Minimalistic.js: Not message for the "${ method }" method!`);
+                // eslint-disable-next-line no-console
+                console.warn(`Minimalistic.js: Not message for the "${ method }" method!`);
                 return method;
             }
         }
