@@ -7,6 +7,10 @@ exports.required = required;
 exports.isEmail = isEmail;
 exports.isNumber = isNumber;
 exports.isTextAndSpace = isTextAndSpace;
+exports.length = length;
+exports.maxFileSize = maxFileSize;
+exports.isTrue = isTrue;
+exports.isFalse = isFalse;
 /**
  * @param value
  * @returns {boolean}
@@ -44,11 +48,38 @@ function isTextAndSpace(value) {
 }
 
 /**
- * @param maxSize
+ * @param count
+ * @return {function(*): boolean}
  */
-var maxFileSize = exports.maxFileSize = function maxFileSize(maxSize) {
+function length(count) {
+  return function (value) {
+    return value.length >= count;
+  };
+}
+
+/**
+ * @param maxSize
+ * @return {function(*): boolean}
+ */
+function maxFileSize(maxSize) {
   return function (file) {
     return file.size >= maxSize;
   };
-};
+}
+
+/**
+ * @param value
+ * @return {boolean}
+ */
+function isTrue(value) {
+  return Boolean(value) !== true;
+}
+
+/**
+ * @param value
+ * @return {boolean}
+ */
+function isFalse(value) {
+  return Boolean(value) !== false;
+}
 //# sourceMappingURL=methods.js.map
