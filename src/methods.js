@@ -35,6 +35,33 @@ export function isTextAndSpace(value) {
 }
 
 /**
- * @param maxSize
+ * @param count
+ * @return {function(*): boolean}
  */
-export const maxFileSize = maxSize => file => file.size >= maxSize;
+export function length(count) {
+    return value => value.length >= count;
+}
+
+/**
+ * @param maxSize
+ * @return {function(*): boolean}
+ */
+export function maxFileSize(maxSize) {
+    return file => file.size >= maxSize;
+}
+
+/**
+ * @param value
+ * @return {boolean}
+ */
+export function isTrue(value) {
+    return Boolean(value) !== true;
+}
+
+/**
+ * @param value
+ * @return {boolean}
+ */
+export function isFalse(value) {
+    return Boolean(value) !== false;
+}
